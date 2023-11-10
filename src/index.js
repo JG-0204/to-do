@@ -45,13 +45,6 @@ formAddButton.addEventListener('click', (e) => {
 
 createTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const todo = createTodo();
-  todo.add(sampleProject);
-
-  // renderTodos(sampleProject);
-
-  createTaskDialog.close();
-  createTaskForm.reset();
 });
 
 function createTodo() {
@@ -169,7 +162,8 @@ function createEditTaskBtn(todoObject) {
 
   editTaskButton.addEventListener(
     'click',
-    () => {
+    (e) => {
+      e.preventDefault();
       if (!isClicked) return;
 
       editTodo(todoObject);
