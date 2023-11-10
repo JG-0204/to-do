@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   min-height: 100dvh;
 }
@@ -104,6 +108,17 @@ form {
   margin-bottom: 3rem;
 }
 
+.tasks-section form {
+  display: flex;
+  border: 1px solid;
+  width: min(100%, 900px);
+  margin: 0 auto;
+}
+
+.btn-create-task {
+  width: 100px;
+}
+
 .tasks-list {
   display: flex;
   flex-direction: column;
@@ -124,6 +139,12 @@ form {
   gap: 10px;
 }
 
+.task-btn-container {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+
 .task .bottom {
   justify-content: space-evenly;
 }
@@ -132,11 +153,15 @@ form {
   margin-left: auto;
 }
 
-.create-task-section {
-  margin-right: 10px;
-  width: 500px;
+.create-task-section-container {
+  display: grid;
+  place-items: center;
+}
+
+.create-task-modal {
+  width: min(600px, 95%);
   padding: 1em;
-  /* border: 1px solid; */
+  margin: 0 auto;
 }
 
 #create-task {
@@ -170,17 +195,6 @@ textarea {
   border: 1px solid black;
 }
 
-@media (max-width: 1440px) {
-  .create-task-section {
-    position: absolute;
-    width: 90%;
-    margin: 5% auto;
-    top: 30%;
-    left: 0;
-    right: 0;
-  }
-}
-
 @media (max-width: 900px) {
   header div h2 {
     display: inherit;
@@ -192,9 +206,5 @@ textarea {
 
   .navbar {
     display: none;
-  }
-
-  .create-task-section {
-    top: 20%;
   }
 }

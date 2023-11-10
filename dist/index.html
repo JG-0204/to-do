@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo</title>
-    <script src="./index.html" defer></script>
+    <script src="./main.js" defer></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -44,102 +44,59 @@
             placeholder="Add new Task"
             autocomplete="off"
           />
+          <button class="btn-create-task">+</button>
         </form>
-        <div class="tasks-list">
-          <div class="task">
-            <div class="top">
-              <input type="checkbox" name="" id="" />
-              <h3 class="task-title">Do something</h3>
-              <button>></button>
-            </div>
-            <div class="bottom">
-              <h5>Personal</h5>
-              <h5>07-15-23</h5>
-              <h5>High Priority</h5>
-            </div>
-          </div>
-          <div class="task">
-            <div class="top">
-              <input type="checkbox" name="" id="" />
-              <h3 class="task-title">Do something</h3>
-              <button>></button>
-            </div>
-            <div class="bottom">
-              <h5>Personal</h5>
-              <h5>07-15-23</h5>
-              <h5>High Priority</h5>
-            </div>
-          </div>
-          <div class="task">
-            <div class="top">
-              <input type="checkbox" name="" id="" />
-              <h3 class="task-title">Do something</h3>
-              <button>></button>
-            </div>
-            <div class="bottom">
-              <h5>Personal</h5>
-              <h5>07-15-23</h5>
-              <h5>High Priority</h5>
-            </div>
-          </div>
-          <div class="task">
-            <div class="top">
-              <input type="checkbox" name="" id="" />
-              <h3 class="task-title">Do something</h3>
-              <button>></button>
-            </div>
-            <div class="bottom">
-              <h5>Personal</h5>
-              <h5>07-15-23</h5>
-              <h5>High Priority</h5>
-            </div>
-          </div>
-        </div>
+        <div class="tasks-list"></div>
       </section>
-      <section class="create-task-section">
-        <form action="" id="create-task">
-          <h3>Task</h3>
-          <input type="text" id="task-title" placeholder="Read a book" />
-          <textarea
-            name="task-descrption"
-            id="task-descrption"
-            cols="30"
-            rows="20"
-            placeholder="Description"
-          ></textarea>
-          <div class="projects-container">
-            <label for="project">Projects: </label>
-            <select name="projects" id="projects">
-              <option value="Sample">Sample</option>
-            </select>
+      <div class="create-task-section-container">
+        <dialog class="create-task-modal">
+          <form action="" id="create-task">
+            <h3>Task</h3>
+            <input type="text" id="task-title" placeholder="Read a book" />
+            <textarea
+              name="task-description"
+              id="task-description"
+              cols="30"
+              rows="20"
+              placeholder="Description"
+            ></textarea>
+            <div class="projects-container">
+              <label for="project">Projects: </label>
+              <select name="projects" id="projects">
+                <option value="Sample">Sample</option>
+              </select>
+            </div>
+            <div class="date-container">
+              <label for="due-date">Due date:</label>
+              <input type="date" id="due-date" />
+            </div>
+            <div class="priority-container">
+              <label for="priority-container">Priority: </label>
+              <label for="high">
+                <input type="radio" id="high" name="priority" value="High" />
+                High
+              </label>
+              <label for="medium">
+                <input
+                  type="radio"
+                  id="medium"
+                  name="priority"
+                  value="Medium"
+                />
+                Medium
+              </label>
+              <label for="low">
+                <input type="radio" id="low" name="priority" value="Low" />
+                Low
+              </label>
+            </div>
+          </form>
+          <div class="btn-container">
+            <button class="btn-add-task">Add Task</button>
+            <button class="btn-save-changes hidden">Save Changes</button>
           </div>
-          <div class="date-container">
-            <label for="due-date">Due date:</label>
-            <input type="date" id="due-date" />
-          </div>
-          <div class="priority-container">
-            <label for="priority-container">Priority: </label>
-            <label for="high">
-              <input type="radio" id="high" name="priority" />
-              High
-            </label>
-            <label for="medium">
-              <input type="radio" id="medium" name="priority" />
-              Medium
-            </label>
-            <label for="low">
-              <input type="radio" id="low" name="priority" />
-              Low
-            </label>
-          </div>
-        </form>
-        <div class="btn-container">
-          <button form="create-task" class="btn-delete-task">
-            Delete Task
-          </button>
-          <button form="create-task" class="btn-add-task">Add Task</button>
-        </div>
-      </section>
+        </dialog>
+      </div>
     </main>
   </body>
 </html>
